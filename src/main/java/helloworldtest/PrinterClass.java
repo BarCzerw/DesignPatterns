@@ -1,8 +1,5 @@
 package helloworldtest;
 
-import lombok.Data;
-
-@Data
 public class PrinterClass {
 
     private static String welcomeMessage;
@@ -14,4 +11,14 @@ public class PrinterClass {
         System.out.println(welcomeMessage);
     }
 
+    public static void setWelcomeMessage(String welcomeMessage) {
+        PrinterClass.welcomeMessage = welcomeMessage;
+    }
+
+    public static void main(String[] args) {
+
+        PrinterClass.setWelcomeMessage("Hello world!");
+        PrinterClass.print();
+
+    }
 }
