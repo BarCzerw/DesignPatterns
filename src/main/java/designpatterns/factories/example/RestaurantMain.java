@@ -1,7 +1,5 @@
 package designpatterns.factories.example;
 
-import designpatterns.builders.Burger;
-
 public class RestaurantMain {
 
     public static void main(String[] args) {

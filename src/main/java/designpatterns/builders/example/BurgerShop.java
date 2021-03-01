@@ -1,4 +1,4 @@
-package designpatterns.builders;
+package designpatterns.builders.example;
 
 public class BurgerShop {
 

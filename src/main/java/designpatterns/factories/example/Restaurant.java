@@ -1,6 +1,6 @@
 package designpatterns.factories.example;
 
-import designpatterns.builders.Burger;
+import designpatterns.builders.example.Burger;
 
 import java.util.ArrayList;
 import java.util.List;
