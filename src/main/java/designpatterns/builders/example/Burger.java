@@ -45,6 +45,11 @@ public class Burger {
         System.out.println("--------------------");
     }
 
+    @Override
+    public String toString() {
+        return getName() + " - " + getPrice();
+    }
+
     public static class Builder {
 
         private String name;

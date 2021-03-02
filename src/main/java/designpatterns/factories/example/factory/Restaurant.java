@@ -14,7 +14,7 @@ public abstract class Restaurant {
     public Order placeOrder() {
         List<Burger> burgerOrders = new ArrayList<>();
         Order order = new Order().placeOrder(this);
-        System.out.println("Price: " + order.getOrderPrice());
+        System.out.println(order);
         return order;
     }
 

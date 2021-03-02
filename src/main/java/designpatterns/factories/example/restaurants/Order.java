@@ -30,7 +30,7 @@ public class Order {
     public double getOrderPrice() {
         double sum = 0;
         for (Burger burger : burgerList) {
-            sum+=burger.getPrice();
+            sum += burger.getPrice();
         }
         return sum;
     }
@@ -44,4 +44,13 @@ public class Order {
         return input.equals("1") || input.equals("2") || input.equals("3");
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Your order:\n");
+        for (Burger burger : burgerList) {
+            sb.append(burger).append("\n");
+        }
+        sb.append("-----------\nTotal: ").append(getOrderPrice());
+        return sb.toString();
+    }
 }

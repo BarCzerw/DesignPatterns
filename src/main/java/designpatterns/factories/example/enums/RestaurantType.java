@@ -3,6 +3,10 @@ package designpatterns.factories.example.enums;
 public enum RestaurantType {
 
     MC_DONALD,
-    KFC;
+    KFC,
+    SUBWAY;
 
+    public static RestaurantType getRestaurantType(int index) {
+        return RestaurantType.values()[index-1];
+    }
 }
