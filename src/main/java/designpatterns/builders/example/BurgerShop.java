@@ -1,5 +1,7 @@
 package designpatterns.builders.example;
 
+import designpatterns.factories.example.enums.Ingredient;
+
 public class BurgerShop {
 
     public static void main(String[] args) {
@@ -7,12 +9,12 @@ public class BurgerShop {
         Burger burger1 = new Burger.Builder()
                 .withName("BBQ Burger")
                 .withPrice(24.99)
-                .withIngredient("Beef 200g")
-                .withIngredient("Red onion")
-                .withIngredient("Tomato")
-                .withIngredient("BBQ Sauce")
-                .withIngredient("Letuce")
-                .withIngredient("Cheese")
+                .withIngredient(Ingredient.BEEF)
+                .withIngredient(Ingredient.ONION)
+                .withIngredient(Ingredient.TOMATO)
+                .withIngredient(Ingredient.BBQ_SAUCE)
+                .withIngredient(Ingredient.LETTUCE)
+                .withIngredient(Ingredient.CHEESE)
                 .build();
 
         burger1.print();

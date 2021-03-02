@@ -1,4 +1,4 @@
-package designpatterns.factories.example;
+package designpatterns.factories.example.enums;
 
 public enum RestaurantType {
 

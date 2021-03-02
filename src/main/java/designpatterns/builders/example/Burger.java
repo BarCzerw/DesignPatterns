@@ -1,5 +1,8 @@
 package designpatterns.builders.example;
 
+import designpatterns.factories.example.enums.Ingredient;
+import designpatterns.factories.example.enums.Weight;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,11 +10,13 @@ public class Burger {
 
     private String name;
     private double price;
-    private List<String> ingredients;
+    private Weight weight;
+    private List<Ingredient> ingredients;
 
-    public Burger(String name, double price, List<String> ingredients) {
+    public Burger(String name, double price, Weight weight, List<Ingredient> ingredients) {
         this.name = name;
         this.price = price;
+        this.weight = weight;
         this.ingredients = ingredients;
     }
 
@@ -23,14 +28,18 @@ public class Burger {
         return price;
     }
 
-    public List<String> getIngredients() {
+    public Weight getWeight() {
+        return weight;
+    }
+
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
     public void print() {
         System.out.println(getName() + " - " + getPrice());
         System.out.println("Ingredients:");
-        for (String ingredient : ingredients) {
+        for (Ingredient ingredient : ingredients) {
             System.out.println("-" + ingredient);
         }
         System.out.println("--------------------");
@@ -40,7 +49,8 @@ public class Burger {
 
         private String name;
         private double price;
-        private List<String> ingredients = new ArrayList<>();
+        private Weight weight;
+        private List<Ingredient> ingredients = new ArrayList<>();
 
         public Builder withName(String name) {
             this.name = name;
@@ -52,13 +62,18 @@ public class Burger {
             return this;
         }
 
-        public Builder withIngredient(String ingredient) {
+        public Builder withWeight(Weight weight) {
+            this.weight = weight;
+            return this;
+        }
+
+        public Builder withIngredient(Ingredient ingredient) {
             this.ingredients.add(ingredient);
             return this;
         }
 
         public Burger build() {
-            return new Burger(name, price, ingredients);
+            return new Burger(name, price, weight, ingredients);
         }
 
     }

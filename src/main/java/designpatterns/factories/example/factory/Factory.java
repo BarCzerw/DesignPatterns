@@ -1,4 +1,8 @@
-package designpatterns.factories.example;
+package designpatterns.factories.example.factory;
+
+import designpatterns.factories.example.restaurants.Kfc;
+import designpatterns.factories.example.restaurants.McDonald;
+import designpatterns.factories.example.enums.RestaurantType;
 
 public class Factory {
 
@@ -12,7 +16,8 @@ public class Factory {
                 return new Kfc();
             }
             default -> {
-                return null;
+                System.out.println("No such restaurant!");
+                throw new RuntimeException();
             }
         }
     }
