@@ -8,11 +8,11 @@ public class GameMain {
                 "Gran Turismo",
                 PegiAgeRating.P3,
                 12.0,
-                8,
                 1,
-                16,
                 1,
-                1.3);
+                1,
+                1,
+                0.034);
 
         printInformation(new ComputerGameAdapter(cg));
 
