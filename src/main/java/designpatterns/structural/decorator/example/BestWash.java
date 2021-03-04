@@ -1,4 +1,4 @@
-package designpatterns.structural.decorator;
+package designpatterns.structural.decorator.example;
 
 public class BestWash implements CarWash{
 
