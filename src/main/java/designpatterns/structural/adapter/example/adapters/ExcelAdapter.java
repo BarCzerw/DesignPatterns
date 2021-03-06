@@ -13,6 +13,6 @@ public class ExcelAdapter implements TextEditor {
 
     @Override
     public String getText() {
-        return excelEditor.getText().replace("Text in .xlsx format - ","");
+        return excelEditor.getText().replace("Text in .xlsx format - ", "");
     }
 }

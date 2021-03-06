@@ -2,7 +2,7 @@ package designpatterns.structural.composite.rectangles;
 
 import java.util.List;
 
-public class YellowAndRedBlueCompositeRectangle implements Rectangle{
+public class YellowAndRedBlueCompositeRectangle implements Rectangle {
 
     private List<Rectangle> rectangleList;
 

@@ -4,7 +4,7 @@ import designpatterns.structural.bridge.example.enums.Additions;
 
 import java.util.List;
 
-public class Tea implements Drink{
+public class Tea implements Drink {
 
     private final List<Additions> additionsList;
 
@@ -19,7 +19,7 @@ public class Tea implements Drink{
 
     @Override
     public double getPrice() {
-        return 6.20+additionsPrice();
+        return 6.20 + additionsPrice();
     }
 
     @Override

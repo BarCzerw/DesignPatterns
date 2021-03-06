@@ -1,6 +1,6 @@
 package designpatterns.structural.adapter.exercise;
 
-public class ComputerGameAdapter implements PCGame{
+public class ComputerGameAdapter implements PCGame {
 
     private ComputerGame computerGame;
 

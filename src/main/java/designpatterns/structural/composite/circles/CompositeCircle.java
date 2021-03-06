@@ -2,7 +2,7 @@ package designpatterns.structural.composite.circles;
 
 import java.util.List;
 
-public class CompositeCircle implements Circle{
+public class CompositeCircle implements Circle {
 
     List<Circle> circleList;
 

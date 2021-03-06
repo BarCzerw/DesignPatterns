@@ -7,8 +7,11 @@ import java.util.List;
 public interface Drink {
 
     int getVolume();
+
     double getPrice();
+
     List<Additions> getAdditions();
+
     boolean isAlcoholic();
 
 }

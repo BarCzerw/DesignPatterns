@@ -21,8 +21,8 @@ public class OrderFacade {
 
     public void placeOrder(Product product, int quantity) {
         if (availabilityService.isAvailable(storage, product, quantity)) {
-            paymentService.payForProduct(product,quantity);
-            deliveryService.deliver(storage,product,quantity,"home");
+            paymentService.payForProduct(product, quantity);
+            deliveryService.deliver(storage, product, quantity, "home");
         }
         System.out.println("---------------------");
     }

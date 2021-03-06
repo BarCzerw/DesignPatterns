@@ -41,7 +41,7 @@ public class Requirements {
 
     @Override
     public String toString() {
-        return  "gpuGb=" + gpuGb +
+        return "gpuGb=" + gpuGb +
                 ", HDDGb=" + HDDGb +
                 ", RAMGb=" + RAMGb +
                 ", cpuGhz=" + cpuGhz +

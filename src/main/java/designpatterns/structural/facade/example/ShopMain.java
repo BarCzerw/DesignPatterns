@@ -16,15 +16,15 @@ public class ShopMain {
                 new Availability(),
                 new Payment(),
                 new Delivery(),
-                new Storage(new HashMap<>(Map.of(Product.BOX,100,Product.CONTAINER,5,Product.BIN,300))));
+                new Storage(new HashMap<>(Map.of(Product.BOX, 100, Product.CONTAINER, 5, Product.BIN, 300))));
 
-        order.placeOrder(Product.BOX,19);
-        order.placeOrder(Product.BOX,70);
-        order.placeOrder(Product.BOX,31);
-        order.placeOrder(Product.CONTAINER,3);
-        order.placeOrder(Product.CONTAINER,5);
-        order.placeOrder(Product.BIN,300);
-        order.placeOrder(Product.BIN,1);
+        order.placeOrder(Product.BOX, 19);
+        order.placeOrder(Product.BOX, 70);
+        order.placeOrder(Product.BOX, 31);
+        order.placeOrder(Product.CONTAINER, 3);
+        order.placeOrder(Product.CONTAINER, 5);
+        order.placeOrder(Product.BIN, 300);
+        order.placeOrder(Product.BIN, 1);
 
     }
 

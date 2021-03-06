@@ -6,7 +6,7 @@ import designpatterns.structural.bridge.example.enums.Additions;
 
 import java.util.List;
 
-public class CoffeePurchase implements DrinkPurchase{
+public class CoffeePurchase implements DrinkPurchase {
 
     @Override
     public Drink purchase(List<Additions> additionsList) {

@@ -2,25 +2,35 @@ package designpatterns.structural.bridge.example.vending;
 
 import designpatterns.structural.bridge.example.drinks.Drink;
 import designpatterns.structural.bridge.example.vending.menu.MainMenu;
-import designpatterns.structural.bridge.example.vending.menu.PurchaseMenu;
 
 public class VendingMachine {
 
     private double coinsInMachine;
-    //private MainMenu mainMenu;
+    private MainMenu mainMenu;
+    private VendingState state;
 
     public VendingMachine() {
         this.coinsInMachine = 0;
-        //mainMenu = new MainMenu(this,new PurchaseMenu(this,),new InsertCoinMenu(),new ReleaseChoice());
+        this.state = VendingState.MENU;
     }
 
     public double getBalance() {
         return coinsInMachine;
     }
 
-    private void insertCoin(double value) {
-        coinsInMachine += value;
-        System.out.println("Inserted " + value + " gr - current balance - " + coinsInMachine);
+    public VendingState getState() {
+        return state;
+    }
+
+    public void setState(VendingState state) {
+        this.state = state;
+    }
+
+    public void insertCoin(double value) {
+        if (state == VendingState.COIN_INSERTING) {
+            coinsInMachine += value;
+            System.out.println("Inserted " + value + " gr - current balance - " + coinsInMachine);
+        }
     }
 
     public void releaseCoins() {

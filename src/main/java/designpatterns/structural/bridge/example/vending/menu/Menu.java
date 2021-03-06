@@ -13,7 +13,7 @@ public abstract class Menu implements MenuElement {
         return subElements;
     }
 
-    protected MenuElement getInput(){
+    protected MenuElement getInput() {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         try {

@@ -1,6 +1,6 @@
 package designpatterns.structural.decorator.example;
 
-public class ProWash implements CarWash{
+public class ProWash implements CarWash {
 
     private EnhancedWash enhancedWash;
 

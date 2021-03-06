@@ -1,7 +1,7 @@
 package designpatterns.structural.adapter.example.adapters;
 
-import designpatterns.structural.adapter.example.interfaces.TextEditor;
 import designpatterns.structural.adapter.example.editors.WordEditor;
+import designpatterns.structural.adapter.example.interfaces.TextEditor;
 
 public class WordAdapter implements TextEditor {
 
@@ -13,7 +13,7 @@ public class WordAdapter implements TextEditor {
 
     @Override
     public String getText() {
-        return wordEditor.getText().replace("Text in .docx format - ","");
+        return wordEditor.getText().replace("Text in .docx format - ", "");
     }
 
 }

@@ -5,7 +5,7 @@ import designpatterns.structural.bridge.example.vending.VendingMachine;
 
 import java.util.List;
 
-public class MainMenu extends Menu{
+public class MainMenu extends Menu {
 
     private VendingMachine vm;
 
@@ -20,5 +20,5 @@ public class MainMenu extends Menu{
         printSubElements();
         getInput().onBeingChoosen();
     }
-    
+
 }

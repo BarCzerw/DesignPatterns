@@ -8,7 +8,7 @@ public class Delivery implements DeliveryService {
     public boolean deliver(Storage storage, Product product, int quantity, String address) {
         if (address != null || !address.isEmpty()) {
             System.out.println("Sending to " + address);
-            storage.withdraw(product,quantity);
+            storage.withdraw(product, quantity);
             return true;
         } else {
             System.out.println("Wrong address");
