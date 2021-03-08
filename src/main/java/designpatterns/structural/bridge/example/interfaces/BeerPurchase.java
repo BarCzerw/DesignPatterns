@@ -11,4 +11,14 @@ public class BeerPurchase implements DrinkPurchase {
     public Drink purchase(List<Additions> additionsList) {
         return new Beer(additionsList);
     }
+
+    @Override
+    public double getPrice() {
+        return 5.6;
+    }
+
+    @Override
+    public String toString() {
+        return "Beer - " + getPrice() + " zł";
+    }
 }

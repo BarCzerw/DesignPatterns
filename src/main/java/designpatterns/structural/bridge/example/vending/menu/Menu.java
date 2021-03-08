@@ -1,7 +1,5 @@
 package designpatterns.structural.bridge.example.vending.menu;
 
-import designpatterns.structural.bridge.example.vending.MenuElement;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -17,14 +15,20 @@ public abstract class Menu implements MenuElement {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         try {
-            return subElements.get(Integer.parseInt(input));
+            return subElements.get(Integer.parseInt(input) - 1);
         } catch (Exception e) {
             System.out.println("Wrong input");
             return getInput();
         }
     }
 
+    public void setSubElements(List<MenuElement> subElements) {
+        this.subElements = subElements;
+    }
+
     protected void printSubElements() {
-        subElements.forEach(System.out::println);
+        for (int i = 0; i < subElements.size(); i++) {
+            System.out.println((i + 1) + ". " + subElements.get(i));
+        }
     }
 }

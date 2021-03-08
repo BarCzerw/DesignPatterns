@@ -1,21 +1,43 @@
 package designpatterns.structural.bridge.example.vending.menu;
 
-import designpatterns.structural.bridge.example.drinks.Drink;
-import designpatterns.structural.bridge.example.vending.MenuElement;
+import designpatterns.structural.bridge.example.interfaces.DrinkPurchase;
+import designpatterns.structural.bridge.example.vending.NotEnoughMoneyException;
 import designpatterns.structural.bridge.example.vending.VendingMachine;
 
 public class DrinkChoice implements MenuElement {
 
     private VendingMachine vendingMachine;
-    private Drink drink;
+    private DrinkPurchase drinkPurchase;
+    private MenuElement caller;
 
-    public DrinkChoice(VendingMachine vm, Drink drink) {
-        this.vendingMachine = vm;
-        this.drink = drink;
+    public DrinkChoice(MenuElement caller, DrinkPurchase drinkPurchase) {
+        this.caller = caller;
+        this.vendingMachine = getMachine();
+        this.drinkPurchase = drinkPurchase;
     }
 
     @Override
     public void onBeingChoosen() {
+        try {
+            vendingMachine.purchase(drinkPurchase);
+        } catch (NotEnoughMoneyException e) {
 
+        }
+        caller.onBeingChoosen();
+    }
+
+    @Override
+    public MenuElement getCaller() {
+        return caller;
+    }
+
+    @Override
+    public VendingMachine getMachine() {
+        return getCaller().getMachine();
+    }
+
+    @Override
+    public String toString() {
+        return drinkPurchase.toString();
     }
 }

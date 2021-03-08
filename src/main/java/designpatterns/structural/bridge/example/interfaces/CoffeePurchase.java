@@ -12,4 +12,14 @@ public class CoffeePurchase implements DrinkPurchase {
     public Drink purchase(List<Additions> additionsList) {
         return new Coffee(additionsList);
     }
+
+    @Override
+    public double getPrice() {
+        return 3.4;
+    }
+
+    @Override
+    public String toString() {
+        return "Coffee - " + getPrice() + " zł";
+    }
 }

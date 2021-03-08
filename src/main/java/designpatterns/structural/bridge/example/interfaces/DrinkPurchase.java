@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface DrinkPurchase {
     Drink purchase(List<Additions> additionsList);
+
+    double getPrice();
 }

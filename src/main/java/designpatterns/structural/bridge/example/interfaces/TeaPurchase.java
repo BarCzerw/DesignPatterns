@@ -12,4 +12,14 @@ public class TeaPurchase implements DrinkPurchase {
     public Drink purchase(List<Additions> additionsList) {
         return new Tea(additionsList);
     }
+
+    @Override
+    public double getPrice() {
+        return 2.0;
+    }
+
+    @Override
+    public String toString() {
+        return "Tea - " + getPrice() + " zł";
+    }
 }

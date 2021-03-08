@@ -1,31 +1,41 @@
 package designpatterns.structural.bridge.example.vending.menu;
 
-import designpatterns.structural.bridge.example.vending.MenuElement;
+import designpatterns.structural.bridge.example.vending.NotEnoughMoneyException;
 import designpatterns.structural.bridge.example.vending.VendingMachine;
 import designpatterns.structural.bridge.example.vending.VendingState;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class CoinInsertMenu extends Menu {
 
     private VendingMachine vm;
+    private MenuElement caller;
 
-    public CoinInsertMenu(VendingMachine vm, List<MenuElement> menuList) {
-        this.vm = vm;
-        this.subElements = new LinkedList<>(
-                List.of(
-                        new CoinChoice(0.05),
-                        new CoinChoice(0.10),
-                        new CoinChoice(0.2),
-                        new CoinChoice(0.5)));
-        vm.setState(VendingState.COIN_INSERTING);
+    public CoinInsertMenu(MenuElement caller) {
+        this.caller = caller;
+        this.vm = getMachine();
     }
 
     @Override
     public void onBeingChoosen() {
-        System.out.println("Insert coin");
+        vm.setState(VendingState.COIN_INSERTING);
+        System.out.println("Insert coin:");
         printSubElements();
-        getInput();
+        getInput().onBeingChoosen();
+    }
+
+    @Override
+    public MenuElement getCaller() {
+        return caller;
+    }
+
+    @Override
+    public VendingMachine getMachine() {
+        return getCaller().getMachine();
+    }
+
+    @Override
+    public String toString() {
+        return "Coin inserting";
     }
 }

@@ -2,33 +2,31 @@ package designpatterns.structural.bridge.example.vending.menu;
 
 import designpatterns.structural.bridge.example.vending.VendingMachine;
 
-public class MainMenu extends Menu {
+public class ExitChoice implements MenuElement {
 
-    private VendingMachine vm;
+    private MenuElement caller;
 
-    public MainMenu(VendingMachine vm) {
-        this.vm = vm;
+    public ExitChoice(MenuElement caller) {
+        this.caller = caller;
     }
 
     @Override
     public void onBeingChoosen() {
-        System.out.println("Current balance - " + vm.getBalance());
-        printSubElements();
-        getInput().onBeingChoosen();
+        getCaller().getCaller().onBeingChoosen();
     }
 
     @Override
     public MenuElement getCaller() {
-        return this;
+        return caller;
     }
 
     @Override
     public VendingMachine getMachine() {
-        return vm;
+        return getCaller().getMachine();
     }
 
     @Override
     public String toString() {
-        return "Main menu:";
+        return "Exit";
     }
 }
